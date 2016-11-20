@@ -53,7 +53,7 @@ public class MainActivity extends ListActivity implements IHODClientCallback {
 
     private HODClient mHodClient;
     private HODResponseParser mParser;
-    
+
     private String mHodApiKey = ""; // place you apikey here
     private String mHodApp = "";
 
@@ -73,9 +73,6 @@ public class MainActivity extends ListActivity implements IHODClientCallback {
         mLanguages.put("Chinese", "wiki_chi");
 
         mWikiLanguageSp = (Spinner) findViewById(R.id.wiki_language_sp);
-
-        //mHodClient = new HODClient(mHodApiKey, this);
-        //mParser = new HODResponseParser();
     }
     @Override
     protected void onPause()
@@ -95,7 +92,7 @@ public class MainActivity extends ListActivity implements IHODClientCallback {
         }
 
         if (mHodClient == null)
-            mHodClient = new HODClient("mHodApiKey", this);
+            mHodClient = new HODClient(mHodApiKey, this);
 
         if (mParser == null)
             mParser = new HODResponseParser();
